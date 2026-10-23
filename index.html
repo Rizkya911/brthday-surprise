@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Birthday Surprise 🎀</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      font-family: "Trebuchet MS", sans-serif;
+      background: linear-gradient(135deg, #ffe4ec, #f2e5ff, #fff3df);
+      color: #704d68;
+      overflow-x: hidden;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 460px;
+      padding: 32px 24px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.88);
+      border: 2px solid white;
+      border-radius: 28px;
+      box-shadow: 0 12px 40px #c68dbb35;
+      position: relative;
+      z-index: 1;
+    }
+
+    .decoration {
+      font-size: 48px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    h1 {
+      color: #d76f9e;
+      font-size: 29px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 13px 21px;
+      margin: 7px 3px;
+      background: #f3a6c5;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:hover {
+      background: #e889b0;
+      transform: translateY(-2px);
+    }
+
+    button:disabled {
+      opacity: 0.7;
+      cursor: default;
+    }
+
+    .secondary {
+      background: #b7a2e5;
+    }
+
+    .secondary:hover {
+      background: #9c83d7;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .panel {
+      margin-top: 20px;
+      padding: 19px;
+      background: #fff0f6;
+      border: 1px solid #ffe0ec;
+      border-radius: 20px;
+      animation: appear 0.6s ease;
+    }
+
+    .letter {
+      background: #fff8e9;
+      border-color: #f8e7c5;
+      text-align: left;
+    }
+
+    .signature {
+      text-align: right;
+      color: #d76f9e;
+      font-style: italic;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -35px;
+      pointer-events: none;
+      z-index: 0;
+      animation: rise 4s linear forwards;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-9px);
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes rise {
+      to {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 27px 18px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+
+    <!-- HALAMAN PEMBUKA -->
+    <div class="decoration">🎂🎀</div>
+
+    <p>psstt... ada sesuatu buat kamu!</p>
+
+    <h1>A Little Surprise ♡</h1>
+
+    <p>
+      Ada satu hari spesial yang rasanya sayang
+      kalau dilewatkan begitu saja.
+      Hari ini, kejutan kecil ini khusus buat kamu. 🌷
+    </p>
+
+    <button id="openButton" onclick="openSurprise()">
+      Buka kejutan 💌
+    </button>
+
+    <!-- MUSIK OTOMATIS DIMULAI SAAT KEJUTAN DIBUKA -->
+    <audio id="bgMusic" loop preload="auto">
+      <source src="lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- UCAPAN ULANG TAHUN -->
+    <section id="birthday" class="panel hidden">
+
+      <div style="font-size: 42px;">🎉💗🎂</div>
+
+      <h1>Happy Birthday!</h1>
+
+      <p>
+        Selamat ulang tahun, kamu! 🥳
+        <br><br>
+
+        Semoga hari-harimu dipenuhi hal-hal baik,
+        semua impianmu perlahan menjadi nyata,
+        dan selalu ada alasan untuk tersenyum.
+        <br><br>
+
+        Semoga kamu makin bahagia, makin kuat,
+        dan dikelilingi orang-orang yang tulus menyayangimu.
+        <br><br>
+
+        Have the sweetest birthday! 🌸
+      </p>
+
+      <button onclick="openLetter()">
+        Baca surat kecil 💌
+      </button>
+
+      <button class="secondary" onclick="celebrate()">
+        Ada kejutan lagi! ✨
+      </button>
+
+    </section>
+
+    <!-- SURAT RAHASIA -->
+    <section id="letter" class="panel letter hidden">
+
+      <h2 style="color: #c47b94;">Untuk kamu ♡</h2>
+
+      <p>Hai, kamu!</p>
+
+      <p>
+        Aku cuma mau bilang, semoga di umur yang baru ini
+        ada lebih banyak hal menyenangkan yang datang
+        ke hidupmu.
+      </p>
+
+      <p>
+        Terima kasih sudah menjadi dirimu sendiri.
+        Tetap jadi orang yang punya banyak alasan untuk
+        tersenyum, ya. Jangan terlalu keras sama diri sendiri
+        dan jangan lupa istirahat kalau capek.
+      </p>
+
+      <p>
+        Semoga hal-hal baik selalu menemukan jalan
+        untuk sampai kepadamu. Dan semoga hari ini
+        jadi salah satu kenangan manis yang kamu ingat. 💗
+      </p>
+
+      <p class="signature">
+        Dari seseorang yang mendoakanmu 🌷
+      </p>
+
+    </section>
+
+    <!-- PESAN KEJUTAN TAMBAHAN -->
+    <p id="celebrationText" class="hidden">
+      ✨ Yeay! Semoga semua harapan baikmu terwujud! ✨
+    </p>
+
+  </main>
+
+  <script>
+    // MEMBUKA KEJUTAN DAN MEMUTAR MUSIK
+    async function openSurprise() {
+      const birthday = document.getElementById("birthday");
+      const button = document.getElementById("openButton");
+      const music = document.getElementById("bgMusic");
+
+      // Tampilkan ucapan ulang tahun
+      birthday.classList.remove("hidden");
+
+      button.textContent = "Kejutan terbuka! 💗";
+      button.disabled = true;
+
+      // Putar lagu setelah tombol diklik
+      try {
+        await music.play();
+      } catch (error) {
+        console.error("Musik gagal diputar:", error);
+      }
+
+      // Gulir ke ucapan ulang tahun
+      birthday.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
+      // Efek hati saat kejutan dibuka
+      celebrate();
+    }
+
+    // MEMBUKA SURAT RAHASIA
+    function openLetter() {
+      const letter = document.getElementById("letter");
+
+      letter.classList.remove("hidden");
+
+      letter.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
+      // Hati kecil saat surat dibuka
+      for (let i = 0; i < 8; i++) {
+        setTimeout(createHeart, i * 120);
+      }
+    }
+
+    // KEJUTAN TAMBAHAN
+    function celebrate() {
+      const text = document.getElementById("celebrationText");
+
+      text.classList.remove("hidden");
+
+      for (let i = 0; i < 28; i++) {
+        setTimeout(createHeart, i * 90);
+      }
+    }
+
+    // MEMBUAT ANIMASI HATI DAN DEKORASI
+    function createHeart() {
+      const heart = document.createElement("div");
+
+      heart.className = "heart";
+
+      const decorations = [
+        "💗", "💕", "♡", "🌸", "✨", "🎉"
+      ];
+
+      heart.textContent =
+        decorations[
+          Math.floor(Math.random() * decorations.length)
+        ];
+
+      heart.style.left = Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (16 + Math.random() * 20) + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
