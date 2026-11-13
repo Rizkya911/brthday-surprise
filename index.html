@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffe3ee">
+  <meta name="theme-color" content="#e3efe8">
   <title>A Little Birthday Surprise 🎀</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,14 +12,14 @@
 
   <style>
     :root {
-      --blush: #ffd9e6;
-      --rose: #d9548a;
-      --rose-deep: #b83d70;
-      --lilac: #b9a6ee;
-      --lilac-deep: #7e63c9;
-      --cream: #fff8ec;
-      --plum: #5e3a55;
-      --plum-soft: #86607d;
+      --blush: #dfece4;
+      --rose: #6f9a8a;
+      --rose-deep: #4f7a6b;
+      --lilac: #bccfe6;
+      --lilac-deep: #6f8fb5;
+      --cream: #fbf8f1;
+      --plum: #3f4f52;
+      --plum-soft: #66787a;
       --font-display: "Fraunces", Georgia, serif;
       --font-body: "Nunito", "Trebuchet MS", sans-serif;
       --font-hand: "Caveat", "Segoe Script", "Bradley Hand", cursive;
@@ -39,14 +39,14 @@
       padding: 34px 18px;
       font-family: var(--font-body);
       color: var(--plum);
-      background: #fff1f6;
+      background: #f3f7f4;
       overflow-x: hidden;
     }
 
     body.booth-mode {
       display: block;
       padding: 0;
-      background: #fff5f9;
+      background: #f3f7f4;
     }
 
     .hidden { display: none !important; }
@@ -59,10 +59,10 @@
       overflow: hidden;
       pointer-events: none;
       background:
-        radial-gradient(60% 50% at 12% 8%, #ffe3ee 0, transparent 70%),
-        radial-gradient(50% 50% at 92% 22%, #ebe2ff 0, transparent 70%),
-        radial-gradient(60% 60% at 70% 98%, #fff0d9 0, transparent 70%),
-        linear-gradient(160deg, #fff3f8, #f8eeff 60%, #fff6ea);
+        radial-gradient(60% 50% at 12% 8%, #e3efe8 0, transparent 70%),
+        radial-gradient(50% 50% at 92% 22%, #e4ecf6 0, transparent 70%),
+        radial-gradient(60% 60% at 70% 98%, #f7f1e3 0, transparent 70%),
+        linear-gradient(160deg, #f4f8f5, #eef3f9 60%, #faf6ec);
     }
     body.booth-mode .bg { display: none; }
 
@@ -73,13 +73,13 @@
       opacity: .55;
       animation: drift 18s ease-in-out infinite alternate;
     }
-    .orb.o1 { width: 300px; height: 300px; background: #ffb7d1; left: -100px; top: 6%; }
-    .orb.o2 { width: 260px; height: 260px; background: #cdbcff; right: -90px; top: 42%; animation-duration: 23s; }
-    .orb.o3 { width: 230px; height: 230px; background: #ffe0a8; left: 24%; bottom: -100px; animation-duration: 27s; }
+    .orb.o1 { width: 300px; height: 300px; background: #bcd6c8; left: -100px; top: 6%; }
+    .orb.o2 { width: 260px; height: 260px; background: #bfd0e6; right: -90px; top: 42%; animation-duration: 23s; }
+    .orb.o3 { width: 230px; height: 230px; background: #efe2c2; left: 24%; bottom: -100px; animation-duration: 27s; }
 
     .spark {
       position: absolute;
-      color: #ec8db3;
+      color: #8fb3a3;
       opacity: .0;
       animation: twinkle 4s ease-in-out infinite;
     }
@@ -98,7 +98,7 @@
       border: 1.5px solid rgba(255, 255, 255, .95);
       border-radius: 34px;
       box-shadow:
-        0 24px 60px -20px rgba(198, 100, 150, .38),
+        0 24px 60px -20px rgba(80, 120, 110, .32),
         0 0 0 7px rgba(255, 255, 255, .38);
     }
 
@@ -109,7 +109,7 @@
       width: calc(100% + 28px);
       height: auto;
       pointer-events: none;
-      filter: drop-shadow(0 3px 3px rgba(190, 90, 130, .18));
+      filter: drop-shadow(0 3px 3px rgba(60, 100, 85, .18));
     }
 
     .card p { margin: 0; }
@@ -129,19 +129,19 @@
       width: 230px;
       height: 150px;
       animation: bob 3.4s ease-in-out infinite;
-      filter: drop-shadow(0 16px 18px rgba(200, 100, 150, .3));
+      filter: drop-shadow(0 16px 18px rgba(80, 120, 110, .3));
     }
     .env-back {
       position: absolute; inset: 0; z-index: 0;
       border-radius: 12px;
-      background: linear-gradient(#f6b4cb, #ef9ab9);
+      background: linear-gradient(#bcd3c6, #a8c5b6);
     }
     .env-paper {
       position: absolute; z-index: 1;
       left: 14px; right: 14px; top: 10px; height: 128px;
       border-radius: 8px;
       background: var(--cream);
-      box-shadow: inset 0 0 0 1px #f3dcc6;
+      box-shadow: inset 0 0 0 1px #e5dfd0;
       display: grid; place-items: start center;
       padding-top: 22px;
       font-size: 24px;
@@ -150,20 +150,20 @@
     .env-front {
       position: absolute; inset: 0; z-index: 2;
       border-radius: 12px;
-      background: linear-gradient(160deg, #ffd0e0, #f8a9c6);
+      background: linear-gradient(160deg, #d4e4db, #b9d1c3);
       clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
     }
     .env-front::after {
       content: "";
       position: absolute; inset: 0;
-      background: linear-gradient(#ffdce8, #ffc3d8);
+      background: linear-gradient(#dfece4, #c9dcd0);
       clip-path: polygon(0 100%, 50% 47%, 100% 100%);
     }
     .env-flap {
       position: absolute; z-index: 3;
       left: 0; top: 0; width: 100%; height: 54%;
       transform-origin: top center;
-      background: linear-gradient(#ec86ad, #f4a3c1);
+      background: linear-gradient(#8fb3a3, #a8c5b6);
       clip-path: polygon(0 0, 100% 0, 50% 100%);
       border-radius: 12px 12px 0 0;
       transition: transform .8s cubic-bezier(.5, 0, .2, 1), z-index 0s .4s;
@@ -174,9 +174,9 @@
       width: 44px; height: 44px; margin: -22px 0 0 -22px;
       border-radius: 50%;
       display: grid; place-items: center;
-      font-size: 20px; color: #ffe9f1;
-      background: radial-gradient(circle at 35% 30%, #f2679b, #c23671);
-      box-shadow: 0 3px 8px rgba(150, 30, 80, .4), inset 0 0 0 2px rgba(255, 255, 255, .25);
+      font-size: 20px; color: #f1f7f3;
+      background: radial-gradient(circle at 35% 30%, #7fa896, #4f7a6b);
+      box-shadow: 0 3px 8px rgba(40, 80, 65, .4), inset 0 0 0 2px rgba(255, 255, 255, .25);
       transition: transform .4s ease, opacity .3s ease;
     }
 
@@ -233,10 +233,10 @@
 
     .btn-main {
       color: #fff;
-      background: linear-gradient(135deg, #f58bb4, var(--rose));
-      box-shadow: 0 10px 22px -8px rgba(217, 84, 138, .65);
+      background: linear-gradient(135deg, #8fb7a5, #5f8a79);
+      box-shadow: 0 10px 22px -8px rgba(79, 122, 107, .6);
     }
-    .btn-main:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 26px -8px rgba(217, 84, 138, .7); }
+    .btn-main:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 26px -8px rgba(79, 122, 107, .65); }
     .btn-main::after {
       content: "";
       position: absolute; top: 0; left: -60%;
@@ -251,14 +251,14 @@
     .btn-soft {
       color: var(--rose-deep);
       background: #fff;
-      box-shadow: inset 0 0 0 1.5px #f3bdd2, 0 6px 14px -8px rgba(217, 84, 138, .4);
+      box-shadow: inset 0 0 0 1.5px #bfd5ca, 0 6px 14px -8px rgba(79, 122, 107, .4);
     }
-    .btn-soft:hover { transform: translateY(-2px); background: #fff4f8; }
+    .btn-soft:hover { transform: translateY(-2px); background: #f2f8f5; }
 
     .btn-lilac {
       color: #fff;
-      background: linear-gradient(135deg, #c9b9f6, var(--lilac-deep));
-      box-shadow: 0 10px 22px -10px rgba(126, 99, 201, .7);
+      background: linear-gradient(135deg, #bccfe6, var(--lilac-deep));
+      box-shadow: 0 10px 22px -10px rgba(111, 143, 181, .7);
     }
     .btn-lilac:hover { transform: translateY(-2px); }
 
@@ -293,7 +293,7 @@
 
     .orn {
       margin: 4px 0 14px !important;
-      color: #e7a0bc;
+      color: #9db9ad;
       letter-spacing: .4em;
       font-size: 15px;
     }
@@ -326,19 +326,19 @@
       font-family: var(--font-hand);
       font-size: 22px;
       line-height: 32px;
-      color: #66405c;
+      color: #4a5a5c;
       border-radius: 6px;
       background:
-        linear-gradient(90deg, transparent 30px, #f4a3bf 30px, #f4a3bf 31.5px, transparent 31.5px),
-        repeating-linear-gradient(#fffaf0 0, #fffaf0 31px, #f1e1cd 31px, #f1e1cd 32px);
-      box-shadow: 0 12px 26px -12px rgba(120, 70, 60, .45);
+        linear-gradient(90deg, transparent 30px, #9fbfb0 30px, #9fbfb0 31.5px, transparent 31.5px),
+        repeating-linear-gradient(#fbf9f2 0, #fbf9f2 31px, #e6e1d2 31px, #e6e1d2 32px);
+      box-shadow: 0 12px 26px -12px rgba(60, 80, 70, .45);
       transform: rotate(-.6deg);
     }
     .letter::before {
       content: "";
       position: absolute; top: -12px; left: 50%;
       width: 84px; height: 24px; margin-left: -42px;
-      background: rgba(246, 169, 196, .7);
+      background: rgba(159, 191, 176, .7);
       border-left: 2px dotted rgba(255, 255, 255, .8);
       border-right: 2px dotted rgba(255, 255, 255, .8);
       transform: rotate(2deg);
@@ -357,7 +357,7 @@
       line-height: 1.5;
       color: var(--rose-deep);
       background: #fff;
-      box-shadow: inset 0 0 0 1.5px #f3bdd2;
+      box-shadow: inset 0 0 0 1.5px #bfd5ca;
       animation: pop .5s cubic-bezier(.3, 1.6, .5, 1);
     }
 
@@ -373,7 +373,7 @@
       background: rgba(255, 255, 255, .85);
       -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
-      box-shadow: 0 8px 20px -8px rgba(190, 90, 130, .6), inset 0 0 0 1.5px #f6c6d9;
+      box-shadow: 0 8px 20px -8px rgba(80, 120, 110, .6), inset 0 0 0 1.5px #c3d8cd;
       transition: transform .2s ease;
     }
     .music-toggle:hover { transform: scale(1.06); }
@@ -395,8 +395,8 @@
       line-height: 1.5;
       text-align: center;
       color: #fff;
-      background: rgba(94, 58, 85, .95);
-      box-shadow: 0 12px 30px -10px rgba(60, 20, 50, .5);
+      background: rgba(63, 79, 82, .95);
+      box-shadow: 0 12px 30px -10px rgba(30, 50, 45, .5);
       opacity: 0;
       transform: translate(-50%, 14px);
       pointer-events: none;
@@ -468,23 +468,23 @@
   <audio id="bgMusic" src="lagu.mp3" loop preload="auto" playsinline></audio>
 
   <main class="card" id="mainCard">
-    <svg class="bunting" viewBox="0 0 470 56" aria-hidden="true"><path d="M0 6 Q235 34 470 6" fill="none" stroke="#e39bb8" stroke-width="2" stroke-linecap="round"/><polygon points="13.0,8.3 47.0,8.3 30.0,40.3" fill="#f6a9c4"/><polygon points="64.2,13.0 98.2,13.0 81.2,45.0" fill="#cdbcff"/><polygon points="115.5,16.3 149.5,16.3 132.5,48.3" fill="#ffe3a8"/><polygon points="166.8,18.3 200.8,18.3 183.8,50.3" fill="#ffc2d6"/><polygon points="218.0,19.0 252.0,19.0 235.0,51.0" fill="#f6a9c4"/><polygon points="269.2,18.3 303.2,18.3 286.2,50.3" fill="#cdbcff"/><polygon points="320.5,16.3 354.5,16.3 337.5,48.3" fill="#ffe3a8"/><polygon points="371.8,13.0 405.8,13.0 388.8,45.0" fill="#ffc2d6"/><polygon points="423.0,8.3 457.0,8.3 440.0,40.3" fill="#f6a9c4"/></svg>
+    <svg class="bunting" viewBox="0 0 470 56" aria-hidden="true"><path d="M0 6 Q235 34 470 6" fill="none" stroke="#9db9ad" stroke-width="2" stroke-linecap="round"/><polygon points="13.0,8.3 47.0,8.3 30.0,40.3" fill="#a9c8b8"/><polygon points="64.2,13.0 98.2,13.0 81.2,45.0" fill="#bccfe6"/><polygon points="115.5,16.3 149.5,16.3 132.5,48.3" fill="#efe2c2"/><polygon points="166.8,18.3 200.8,18.3 183.8,50.3" fill="#cfe0d6"/><polygon points="218.0,19.0 252.0,19.0 235.0,51.0" fill="#a9c8b8"/><polygon points="269.2,18.3 303.2,18.3 286.2,50.3" fill="#bccfe6"/><polygon points="320.5,16.3 354.5,16.3 337.5,48.3" fill="#efe2c2"/><polygon points="371.8,13.0 405.8,13.0 388.8,45.0" fill="#cfe0d6"/><polygon points="423.0,8.3 457.0,8.3 440.0,40.3" fill="#a9c8b8"/></svg>
 
     <!-- HALAMAN PEMBUKA -->
     <section class="intro" id="intro">
       <div class="stage" aria-hidden="true">
         <div class="envelope">
           <div class="env-back"></div>
-          <div class="env-paper">♡</div>
+          <div class="env-paper">✦</div>
           <div class="env-front"></div>
           <div class="env-flap"></div>
-          <div class="env-seal">♡</div>
+          <div class="env-seal">✦</div>
         </div>
       </div>
 
       <p class="whisper">psstt... ada sesuatu buat kamu!</p>
 
-      <h1 class="title">A Little Surprise for u <span class="heart">♡</span></h1>
+      <h1 class="title">A Little Surprise for u <span class="heart">✦</span></h1>
 
       <p class="lead">
         Ada satu hari spesial yang rasanya sayang
@@ -493,7 +493,7 @@
       </p>
 
       <button id="openButton" class="btn btn-main" type="button" onclick="openSurprise()">
-        Buka kejutan 💌
+        Buka kejutan ✉️
       </button>
     </section>
 
@@ -503,7 +503,7 @@
 
       <h2 class="hb" style="--i:1">Happy Birthday!</h2>
 
-      <p class="orn" style="--i:2" aria-hidden="true">♡ ୨୧ ♡</p>
+      <p class="orn" style="--i:2" aria-hidden="true">✦ ✧ ✦</p>
 
       <p class="wish" style="--i:3">
         Selamat ulang tahun, kamu! 🥳
@@ -521,12 +521,12 @@
       </p>
 
       <p class="wish" style="--i:6">
-        Have the sweetest birthday! 🌸
+        Have the sweetest birthday! 🌼
       </p>
 
       <div class="actions" style="--i:7">
         <button id="letterBtn" class="btn btn-main" type="button" aria-expanded="false" aria-controls="letterWrap" onclick="openLetter()">
-          Baca surat 💌
+          Baca surat ✉️
         </button>
 
         <button class="btn btn-soft" type="button" onclick="celebrate()">
@@ -542,7 +542,7 @@
       <div id="letterWrap" class="letter-wrap" aria-hidden="true">
         <div class="letter-clip">
           <article class="letter">
-            <h3>Untuk kamu ♡</h3>
+            <h3>Untuk kamu ✦</h3>
 
             <p>Hai, kamu!</p>
 
@@ -562,11 +562,11 @@
             <p>
               Semoga hal-hal baik selalu menemukan jalan
               untuk sampai padamu. Dan semoga hari ini
-              jadi salah satu kenangan manis yang kamu ingat. Aamiin 💗
+              jadi salah satu kenangan manis yang kamu ingat. Aamiin 🌿
             </p>
 
             <p class="signature">
-              Dari seseorang yang mendoakanmu 🌷
+              Dari temanmu yang mendoakanmu 🌷
                                     ~Riz-kyaa
             </p>
           </article>
@@ -581,15 +581,15 @@
   </main>
 
   <!-- HALAMAN PHOTOBOOTH TERPADU -->
-  <section id="photoboothPage" class="hidden" aria-label="Pink Photo Booth">
+  <section id="photoboothPage" class="hidden" aria-label="Photo Booth">
       <style>
 #photoboothPage {
-      --pink: #f6a9c4;
-      --pink-dark: #d85f91;
-      --pink-pale: #fff0f6;
-      --ink: #704557;
+      --pink: #a9c8b8;
+      --pink-dark: #5f8a79;
+      --pink-pale: #eef4f0;
+      --ink: #3f4f52;
       --white: #fffdfd;
-      --shadow: 0 18px 50px rgba(190, 96, 135, .16);
+      --shadow: 0 18px 50px rgba(80, 120, 110, .16);
     }
 #photoboothPage * { box-sizing: border-box; }
 #photoboothPage {
@@ -599,8 +599,8 @@
       color: var(--ink);
       background:
         radial-gradient(circle at 10% 15%, rgba(255,255,255,.95), transparent 27%),
-        radial-gradient(circle at 90% 80%, rgba(255,210,229,.7), transparent 30%),
-        linear-gradient(135deg, #fff5f9, #ffe3ef 55%, #fff7fb);
+        radial-gradient(circle at 90% 80%, rgba(200,222,210,.7), transparent 30%),
+        linear-gradient(135deg, #f4f8f5, #e3efe8 55%, #f7faf8);
       padding: 24px 14px 48px;
     }
 #photoboothPage button, #photoboothPage input { font: inherit; }
@@ -610,8 +610,8 @@
       text-decoration: none; font-weight: 700;
     }
 #photoboothPage header { text-align: center; margin: 8px 0 24px; }
-#photoboothPage .eyebrow { letter-spacing: 2px; text-transform: uppercase; font-size: .76rem; color: #bd7292; }
-#photoboothPage h1 { margin: 8px 0; font-size: clamp(2rem, 6vw, 3.2rem); color: #c65383; }
+#photoboothPage .eyebrow { letter-spacing: 2px; text-transform: uppercase; font-size: .76rem; color: #7a9a8c; }
+#photoboothPage h1 { margin: 8px 0; font-size: clamp(2rem, 6vw, 3.2rem); color: #4f7a6b; }
 #photoboothPage header p { margin: 0 auto; max-width: 560px; line-height: 1.6; }
 #photoboothPage .layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); gap: 22px; align-items: start; }
 #photoboothPage .panel {
@@ -625,29 +625,29 @@
       border: 0; border-radius: 999px; padding: 11px 16px; cursor: pointer;
       transition: transform .15s ease, opacity .15s ease;
     }
-#photoboothPage .tab { background: #fff0f6; color: #b64d7c; font-weight: 700; }
-#photoboothPage .tab.active, #photoboothPage .btn.primary { color: white; background: linear-gradient(135deg, #ee8fb4, #d85f91); }
-#photoboothPage .btn.secondary { background: #fff0f6; color: #b64d7c; }
+#photoboothPage .tab { background: #eef4f0; color: #4f7a6b; font-weight: 700; }
+#photoboothPage .tab.active, #photoboothPage .btn.primary { color: white; background: linear-gradient(135deg, #8fb7a5, #5f8a79); }
+#photoboothPage .btn.secondary { background: #eef4f0; color: #4f7a6b; }
 #photoboothPage .btn:disabled { opacity: .45; cursor: not-allowed; }
 #photoboothPage .btn:not(:disabled):active, #photoboothPage .tab:active { transform: scale(.98); }
 #photoboothPage .camera-frame {
-      position: relative; overflow: hidden; border-radius: 18px; background: #f8dce8;
+      position: relative; overflow: hidden; border-radius: 18px; background: #dce8e1;
       aspect-ratio: 4 / 3; display: grid; place-items: center;
     }
 #photoboothPage video { width: 100%; height: 100%; object-fit: cover; display: none; transform: scaleX(-1); }
-#photoboothPage .camera-placeholder { text-align: center; padding: 20px; color: #a76b86; line-height: 1.5; }
+#photoboothPage .camera-placeholder { text-align: center; padding: 20px; color: #6c8a7d; line-height: 1.5; }
 #photoboothPage .countdown {
       position: absolute; inset: 0; display: none; place-items: center;
       color: white; font-size: clamp(4rem, 15vw, 7rem); font-weight: 900;
-      text-shadow: 0 3px 20px rgba(100, 20, 60, .35); background: rgba(135, 54, 91, .14);
+      text-shadow: 0 3px 20px rgba(30, 60, 50, .35); background: rgba(50, 80, 70, .14);
     }
 #photoboothPage .controls { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
-#photoboothPage .hint { font-size: .88rem; line-height: 1.5; color: #9a6b80; margin: 12px 0 0; }
+#photoboothPage .hint { font-size: .88rem; line-height: 1.5; color: #6c8a7d; margin: 12px 0 0; }
 #photoboothPage .upload-area { display: none; }
 #photoboothPage .upload-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
 #photoboothPage .upload-slot {
       display: grid; place-items: center; min-height: 112px; padding: 8px;
-      border: 1.5px dashed #e8a5bf; border-radius: 14px; background: #fff7fa;
+      border: 1.5px dashed #a9c8b8; border-radius: 14px; background: #f4f8f5;
       text-align: center; font-size: .82rem; cursor: pointer; overflow: hidden;
     }
 #photoboothPage .upload-slot img { width: 100%; height: 100px; object-fit: cover; border-radius: 9px; }
@@ -655,47 +655,46 @@
 #photoboothPage .preview-wrap { display: flex; flex-direction: column; align-items: center; }
 #photoboothPage .strip {
       position:relative; width:min(100%,360px); aspect-ratio:720 / 1200;
-      background:#fbd5e1; border-radius:6px; overflow:hidden;
-      box-shadow:0 14px 34px rgba(172,83,120,.28);
+      background:#d6e4db; border-radius:6px; overflow:hidden;
+      box-shadow:0 14px 34px rgba(60,100,85,.28);
     }
 #photoboothPage .strip canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
 #photoboothPage .strip-photos { position:absolute; inset:0; }
 #photoboothPage .strip-photos .photo-frame {
-      position:absolute; overflow:hidden; background:#f3dfe6; touch-action:none; cursor:grab;
+      position:absolute; overflow:hidden; background:#e3ece7; touch-action:none; cursor:grab;
     }
 #photoboothPage .strip-photos .photo-frame:active { cursor:grabbing; }
 #photoboothPage .strip-photos .photo-frame::after {
-      content:""; position:absolute; inset:0; border:2px solid #ea6f9a; pointer-events:none;
+      content:""; position:absolute; inset:0; border:2px solid #5f8a79; pointer-events:none;
     }
 #photoboothPage .strip-photos .empty { width:100%; height:100%; display:grid;
-      place-items:center; color:#d27a9a; font-size:.9rem; text-align:center; }
+      place-items:center; color:#7a9a8c; font-size:.9rem; text-align:center; }
 #photoboothPage .strip-photos img { display:block; width:100%; height:100%; object-fit:cover;
       user-select:none; pointer-events:none; }
-#photoboothPage .adjust-box { margin-top:13px; padding:12px; background:#fff5f9; border-radius:14px; }
+#photoboothPage .adjust-box { margin-top:13px; padding:12px; background:#f4f8f5; border-radius:14px; }
 #photoboothPage .adjust-box label { display:block; font-size:.85rem; margin-bottom:6px; font-weight:700; }
-#photoboothPage .adjust-box input[type=range] { width:100%; accent-color:#d85f91; }
-#photoboothPage .selected-label { font-size:.85rem; color:#b64d7c; margin:0 0 8px; }
-#photoboothPage .strip-footer { text-align: center; color: #d45e91; font-size: .78rem; padding-top: 11px; letter-spacing: .5px; }
-#photoboothPage .preview-note { text-align: center; font-size: .86rem; line-height: 1.5; color: #9a6b80; margin: 16px 0 0; }
-#photoboothPage .status { min-height: 1.4em; margin-top: 10px; color: #b64d7c; font-size: .9rem; line-height: 1.4; }
+#photoboothPage .adjust-box input[type=range] { width:100%; accent-color:#5f8a79; }
+#photoboothPage .selected-label { font-size:.85rem; color:#4f7a6b; margin:0 0 8px; }
+#photoboothPage .strip-footer { text-align: center; color: #5f8a79; font-size: .78rem; padding-top: 11px; letter-spacing: .5px; }
+#photoboothPage .preview-note { text-align: center; font-size: .86rem; line-height: 1.5; color: #6c8a7d; margin: 16px 0 0; }
+#photoboothPage .status { min-height: 1.4em; margin-top: 10px; color: #4f7a6b; font-size: .9rem; line-height: 1.4; }
 #photoboothPage .hidden { display: none !important; }
-#photoboothPage footer { text-align: center; font-size: .82rem; color: #b27c95; margin-top: 22px; }
+#photoboothPage footer { text-align: center; font-size: .82rem; color: #7a9a8c; margin-top: 22px; }
 @media (max-width: 760px) {#photoboothPage .layout { grid-template-columns: 1fr; }
 #photoboothPage .panel { padding: 16px; }
 #photoboothPage .strip { width: min(100%, 300px); }}
-      
-/* --- penyesuaian agar tampilan tetap sama setelah CSS halaman utama dipisah --- */
+
 #photoboothPage { width: 100%; }
 #photoboothPage button { margin: 7px 3px; }
 #photoboothPage .panel { margin-top: 20px; }
 #photoboothPage header p { font-size: 15px; line-height: 1.6; }
-#photoboothPage .btn:focus-visible, #photoboothPage .tab:focus-visible { outline: 3px solid #d85f91; outline-offset: 2px; }
+#photoboothPage .btn:focus-visible, #photoboothPage .tab:focus-visible { outline: 3px solid #5f8a79; outline-offset: 2px; }
       </style>
 <div class="page">
-    <a class="top-link" href="#" onclick="showBirthdayPage(); return false;">← Kembali ke kejutan ♡</a>
+    <a class="top-link" href="#" onclick="showBirthdayPage(); return false;">← Kembali ke kejutan ✦</a>
     <header>
       <div class="eyebrow">a tiny memory to keep</div>
-      <h1>Pink Photo Booth ♡</h1>
+      <h1>Photo Booth ✦</h1>
       <p>Ambil tiga pose favoritmu, lalu simpan kenangan kecil ini dalam satu strip foto yang manis. 🎀</p>
     </header>
 
@@ -710,7 +709,7 @@
         <div id="cameraArea">
           <div class="camera-frame">
             <div class="camera-placeholder" id="cameraPlaceholder">
-              <div style="font-size:2.5rem">♡</div>
+              <div style="font-size:2.5rem">✦</div>
               <strong>Kamera siap?</strong><br>
               Tekan “Nyalakan kamera”, lalu pencet tombol foto setiap kali siap berpose.
             </div>
@@ -759,7 +758,7 @@
         </div>
       </section>
     </div>
-    <footer>made with ♡ just for a little happy memory</footer>
+    <footer>made with ✦ just for a little happy memory</footer>
   </div>
   <canvas id="canvas" class="hidden"></canvas>
     </section>
@@ -887,7 +886,7 @@
       const button = $('openButton');
       if (button.disabled) return;
       button.disabled = true;
-      button.textContent = 'Kejutan terbuka! 💗';
+      button.textContent = 'Kejutan terbuka! 🌿';
 
       // Musik harus dimulai langsung di dalam klik (syarat autoplay browser)
       const musicStarted = startMusic();
@@ -912,7 +911,7 @@
     }
 
     /* =========================================================
-       SURAT, CONFETTI, HATI
+       SURAT, CONFETTI, IKON MELAYANG
        ========================================================= */
     function openLetter() {
       const wrap = $('letterWrap');
@@ -922,7 +921,7 @@
       wrap.classList.toggle('open', open);
       wrap.setAttribute('aria-hidden', String(!open));
       btn.setAttribute('aria-expanded', String(open));
-      btn.textContent = open ? 'Tutup surat ✉️' : 'Baca surat 💌';
+      btn.textContent = open ? 'Tutup surat ✉️' : 'Baca surat ✉️';
 
       if (open) {
         celebrateHearts(8, 120);
@@ -944,7 +943,7 @@
     function createHeart() {
       const heart = document.createElement('div');
       heart.className = 'heart-float';
-      const decorations = ['💗', '💕', '♡', '🌸', '✨', '🎉'];
+      const decorations = ['🌿', '🍃', '🌼', '✨', '🎉', '⭐'];
       heart.textContent = decorations[Math.floor(Math.random() * decorations.length)];
       heart.style.left = Math.random() * 100 + 'vw';
       heart.style.fontSize = (16 + Math.random() * 20) + 'px';
@@ -956,7 +955,7 @@
     const cv = $('confetti');
     const cx = cv.getContext('2d');
     let pieces = [], confettiFrame = null, W = 0, H = 0;
-    const CONFETTI_COLORS = ['#f6a9c4', '#ee7fa8', '#cdbcff', '#ffe3a8', '#ffffff', '#ffb7a8'];
+    const CONFETTI_COLORS = ['#a9c8b8', '#8fb7a5', '#bccfe6', '#efe2c2', '#ffffff', '#d9e6f2'];
 
     function sizeCanvas() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -980,7 +979,7 @@
           w: 6 + Math.random() * 7, h: 4 + Math.random() * 5,
           rot: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.35,
           color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
-          shape: r < 0.22 ? 'heart' : r < 0.45 ? 'dot' : 'rect',
+          shape: r < 0.45 ? 'dot' : 'rect',
           life: 0, max: 130 + Math.random() * 90
         });
       }
@@ -1000,8 +999,7 @@
         cx.rotate(p.rot);
         cx.fillStyle = p.color;
         if (p.shape === 'rect') cx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
-        else if (p.shape === 'dot') { cx.beginPath(); cx.arc(0, 0, p.h * 0.6, 0, 6.283); cx.fill(); }
-        else { cx.font = (p.w * 2) + 'px sans-serif'; cx.textAlign = 'center'; cx.textBaseline = 'middle'; cx.fillText('♥', 0, 0); }
+        else { cx.beginPath(); cx.arc(0, 0, p.h * 0.6, 0, 6.283); cx.fill(); }
         cx.restore();
       }
       if (pieces.length) confettiFrame = requestAnimationFrame(tickConfetti);
@@ -1011,7 +1009,7 @@
     /* ---------- Kerlip bintang di latar ---------- */
     (function makeSparkles() {
       const box = $('sparkles');
-      const glyphs = ['✦', '✧', '♡', '✦'];
+      const glyphs = ['✦', '✧', '✦', '✧'];
       for (let i = 0; i < 18; i++) {
         const s = document.createElement('span');
         s.className = 'spark';
@@ -1064,7 +1062,7 @@
 
     /* ---------- Ukuran & tata letak strip (satuan desain 720 x 1200) ---------- */
     const STRIP = { W: 720, H: 1200, x: 160, w: 400, h: 290, ys: [215, 525, 835] };
-    const PINK = '#ee5b8b', PINK_DEEP = '#e0457b', OUTLINE = '#fff6f9';
+    const PINK = '#ee5b8b', PINK_DEEP = '#e0457b', OUTLINE = '#fff6f9';   // warna dasar; diubah jadi sage oleh soften()
     const FONT_STACK = 'Chewy, "Arial Rounded MT Bold", "Trebuchet MS", sans-serif';
     const blankCrop = () => ({ zoom: 1, x: 0, y: 0 });
 
@@ -1124,7 +1122,7 @@
       placeholder.style.display = '';
       startCameraBtn.textContent = 'Nyalakan kamera';
       updateCaptureButton();
-      if (!silent) setStatus('Kamera dimatikan. Foto yang sudah kamu ambil tetap aman 💗');
+      if (!silent) setStatus('Kamera dimatikan. Foto yang sudah kamu ambil tetap aman 🌿');
     }
 
     startCameraBtn.addEventListener('click', () => { stream ? stopCamera() : startCamera(); });
@@ -1176,9 +1174,9 @@
       renderStrip(); syncAdjustmentControls(); updateCaptureButton();
 
       if (wasRetake) {
-        setStatus(`Foto ${idx + 1} sudah diganti. Foto lainnya tidak berubah 💗`);
+        setStatus(`Foto ${idx + 1} sudah diganti. Foto lainnya tidak berubah 🌿`);
       } else if (photos.every(Boolean)) {
-        setStatus('Ketiga foto selesai! Geser/zoom tiap foto, atau ulangi satu foto saja kalau belum puas. 💗');
+        setStatus('Ketiga foto selesai! Geser/zoom tiap foto, atau ulangi satu foto saja kalau belum puas. 🌿');
       } else {
         const next = photos.findIndex(p => !p);
         setStatus(`Foto ${idx + 1} tersimpan. Atur pose lagi, lalu tekan tombol untuk foto ${next + 1}/3.`);
@@ -1197,7 +1195,7 @@
         retakeBackupCrop = null;
         selectedPhoto = cancelledIndex;
         renderStrip(); syncAdjustmentControls(); updateCaptureButton();
-        setStatus(`Pengulangan foto ${cancelledIndex + 1} dibatalkan. Foto sebelumnya dikembalikan 💗`);
+        setStatus(`Pengulangan foto ${cancelledIndex + 1} dibatalkan. Foto sebelumnya dikembalikan 🌿`);
         return;
       }
       if (!photos[selectedPhoto]) return;
@@ -1266,7 +1264,7 @@
             label.appendChild(newInput);
             attachUploadListeners();
             renderStrip(); syncAdjustmentControls(); updateCaptureButton();
-            setStatus(photos.every(Boolean) ? 'Tiga foto siap! Kamu bisa men-download strip-nya. 💗' : `Foto ${index + 1} ditambahkan.`);
+            setStatus(photos.every(Boolean) ? 'Tiga foto siap! Kamu bisa men-download strip-nya. 🌿' : `Foto ${index + 1} ditambahkan.`);
           } catch (error) {
             setStatus('Foto ini tidak bisa dibuka. Coba pilih file gambar lain.');
           }
@@ -1313,7 +1311,7 @@
         frame.style.width = (STRIP.w / STRIP.W * 100) + '%';
         frame.style.height = (STRIP.h / STRIP.H * 100) + '%';
         const isSel = selectedPhoto === i;
-        frame.style.boxShadow = isSel && photo ? '0 0 0 3px #fff, 0 0 0 5px #d85f91' : 'none';
+        frame.style.boxShadow = isSel && photo ? '0 0 0 3px #fff, 0 0 0 5px #5f8a79' : 'none';
         if (photo) {
           const img = document.createElement('img');
           img.alt = `Foto ${i + 1}`;
@@ -1323,7 +1321,7 @@
           frame.addEventListener('click', () => { if (selectedPhoto !== i) selectPhoto(i); });
           makeDraggable(frame, i);
         } else {
-          frame.innerHTML = `<div class="empty">Foto ${i + 1}<br>♡</div>`;
+          frame.innerHTML = `<div class="empty">Foto ${i + 1}<br>✦</div>`;
           frame.addEventListener('click', () => selectPhoto(i));
         }
         stripPhotos.appendChild(frame);
@@ -1376,12 +1374,42 @@
        ========================================================= */
     function seeded(seed) { let s = seed; return () => (s = (s * 16807) % 2147483647) / 2147483647; }
 
+    // Mengubah semua warna pink/ungu hasil gambar menjadi sage green / dusty blue yang kalem
+    function soften(c) {
+      const w = c.canvas.width, h = c.canvas.height;
+      const img = c.getImageData(0, 0, w, h), d = img.data;
+      for (let i = 0; i < d.length; i += 4) {
+        const r = d[i] / 255, g = d[i + 1] / 255, b = d[i + 2] / 255;
+        const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+        const l = (mx + mn) / 2, dl = mx - mn;
+        if (dl < 0.02) continue;                       // putih/abu dibiarkan
+        let s = dl / (1 - Math.abs(2 * l - 1)), hue;
+        if (mx === r) hue = ((g - b) / dl + 6) % 6;
+        else if (mx === g) hue = (b - r) / dl + 2;
+        else hue = (r - g) / dl + 4;
+        hue *= 60;
+        if (hue >= 285 || hue < 30) hue = 150;         // pink/merah -> sage green
+        else if (hue >= 235) hue = 210;                // ungu -> dusty blue
+        s *= 0.55;                                     // warna lebih kalem
+        const k = (n) => (n + hue / 30) % 12;
+        const a = s * Math.min(l, 1 - l);
+        const f = (n) => l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1));
+        d[i] = f(0) * 255; d[i + 1] = f(8) * 255; d[i + 2] = f(4) * 255;
+      }
+      c.putImageData(img, 0, 0);
+    }
+
     function drawStripArt(c, S) {
+      drawStripArtRaw(c, S);
+      soften(c);
+    }
+
+    function drawStripArtRaw(c, S) {
       const { W, H } = STRIP;
       c.save();
       c.setTransform(S, 0, 0, S, 0, 0);
 
-      // kertas pink + bintik halus
+      // kertas + bintik halus
       const g = c.createLinearGradient(0, 0, 0, H);
       g.addColorStop(0, '#fcdbe6'); g.addColorStop(1, '#fad0de');
       c.fillStyle = g; c.fillRect(0, 0, W, H);
@@ -1395,7 +1423,7 @@
       const P = (d) => new Path2D(d);
       const ell = (cx, cy, rx, ry, rot = 0) => { const p = new Path2D(); p.ellipse(cx, cy, rx, ry, rot, 0, Math.PI * 2); return p; };
 
-      // "stiker": garis putih tebal di luar, lalu isi + garis pink
+      // "stiker": garis putih tebal di luar, lalu isi + garis berwarna
       const group = (parts, s) => {
         c.save();
         c.strokeStyle = OUTLINE;
@@ -1412,9 +1440,10 @@
       };
 
       const SOFT = 'rgba(255,238,244,.55)';
-      const HEART = P('M0 38 C-60 0 -45 -40 -20 -40 C-8 -40 0 -32 0 -24 C0 -32 8 -40 20 -40 C45 -40 60 0 0 38 Z');
+      // bintang 5 sudut (pengganti hati)
+      const HEART = P('M0 -44 L13 -14 L45 -12 L20 8 L28 40 L0 22 L-28 40 L-20 8 L-45 -12 L-13 -14 Z');
       const SPARK = P('M0 -50 Q4 -4 50 0 Q4 4 0 50 Q-4 4 -50 0 Q-4 -4 0 -50 Z');
-      const MINIHEART = P('M0 9 C-10 2 -7 -5 -3 -5 C-1 -5 0 -3 0 -1 C0 -3 1 -5 3 -5 C7 -5 10 2 0 9 Z');
+      const MINIHEART = P('M-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0 Z');
 
       const heart = (x, y, size, rot) => put(x, y, size, 100, rot, s => group([{ p: HEART, fill: SOFT }], s));
       const sparkle = (x, y, size) => put(x, y, size, 100, 0, s => group([{ p: SPARK, fill: SOFT }], s));
@@ -1480,7 +1509,7 @@
         });
         group(parts, s);
         c.fillStyle = PINK;
-        c.fill(P('M0 46 C-14 36 -10 26 -4 26 C-1 26 0 29 0 31 C0 29 1 26 4 26 C10 26 14 36 0 46 Z'));
+        c.fill(P('M-7 38 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 Z'));
       });
 
       const ribbon = (x, y) => {
@@ -1576,7 +1605,7 @@
         ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip();
         drawCover(photo, x, y, w, h, crops[i] || blankCrop());
         ctx.restore();
-        ctx.strokeStyle = '#ea6f9a'; ctx.lineWidth = 4;
+        ctx.strokeStyle = '#6f9a8a'; ctx.lineWidth = 4;
         ctx.strokeRect(x + 2, y + 2, w - 4, h - 4);
       });
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -1586,7 +1615,7 @@
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'pink-photo-strip.png';
+        link.download = 'photo-strip.png';
         document.body.appendChild(link);
         link.click();
         link.remove();
