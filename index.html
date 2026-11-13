@@ -46,7 +46,7 @@
     body.booth-mode {
       display: block;
       padding: 0;
-      background: #f3f7f4;
+      background: #eefbe0;
     }
 
     .hidden { display: none !important; }
@@ -585,12 +585,12 @@
   <section id="photoboothPage" class="hidden" aria-label="Photo Booth">
       <style>
 #photoboothPage {
-      --pink: #a9c8b8;
-      --pink-dark: #5f8a79;
-      --pink-pale: #eef4f0;
-      --ink: #3f4f52;
+      --pink: #7bc96f;
+      --pink-dark: #2e8b57;
+      --pink-pale: #eef9e4;
+      --ink: #33503a;
       --white: #fffdfd;
-      --shadow: 0 18px 50px rgba(80, 120, 110, .16);
+      --shadow: 0 18px 50px rgba(60, 130, 80, .18);
     }
 #photoboothPage * { box-sizing: border-box; }
 #photoboothPage {
@@ -599,9 +599,10 @@
       font-family: "Trebuchet MS", Arial, sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 10% 15%, rgba(255,255,255,.95), transparent 27%),
-        radial-gradient(circle at 90% 80%, rgba(200,222,210,.7), transparent 30%),
-        linear-gradient(135deg, #f4f8f5, #e3efe8 55%, #f7faf8);
+        radial-gradient(circle at 8% 12%, rgba(255,236,150,.65), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(160,220,255,.55), transparent 30%),
+        radial-gradient(circle at 85% 88%, rgba(255,190,150,.5), transparent 30%),
+        linear-gradient(135deg, #eefbe0, #dff5e8 55%, #f4fbe6);
       padding: 24px 14px 48px;
     }
 #photoboothPage button, #photoboothPage input { font: inherit; }
@@ -611,44 +612,47 @@
       text-decoration: none; font-weight: 700;
     }
 #photoboothPage header { text-align: center; margin: 8px 0 24px; }
-#photoboothPage .eyebrow { letter-spacing: 2px; text-transform: uppercase; font-size: .76rem; color: #7a9a8c; }
-#photoboothPage h1 { margin: 8px 0; font-size: clamp(2rem, 6vw, 3.2rem); color: #4f7a6b; }
+#photoboothPage .eyebrow { letter-spacing: 2px; text-transform: uppercase; font-size: .76rem; color: #f08a3c; font-weight: 700; }
+#photoboothPage h1 { margin: 8px 0; font-size: clamp(2rem, 6vw, 3.2rem); color: #2e8b57; text-shadow: 0 3px 0 #fff, 0 6px 14px rgba(255,170,60,.35); }
 #photoboothPage header p { margin: 0 auto; max-width: 560px; line-height: 1.6; }
 #photoboothPage .layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); gap: 22px; align-items: start; }
 #photoboothPage .panel {
-      background: rgba(255,255,255,.82); border: 1px solid rgba(255,255,255,.9);
+      background: rgba(255,255,255,.86); border: 1px solid rgba(255,255,255,.9);
       border-radius: 24px; padding: 20px; box-shadow: var(--shadow);
       backdrop-filter: blur(8px);
     }
+#photoboothPage .layout .panel:first-child { border-top: 6px solid #7bc96f; }
+#photoboothPage .layout .panel:last-child { border-top: 6px solid #ffc83d; }
 #photoboothPage h2 { margin: 0 0 12px; font-size: 1.15rem; }
 #photoboothPage .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
 #photoboothPage .tab, #photoboothPage .btn {
       border: 0; border-radius: 999px; padding: 11px 16px; cursor: pointer;
       transition: transform .15s ease, opacity .15s ease;
     }
-#photoboothPage .tab { background: #eef4f0; color: #4f7a6b; font-weight: 700; }
-#photoboothPage .tab.active, #photoboothPage .btn.primary { color: white; background: linear-gradient(135deg, #8fb7a5, #5f8a79); }
-#photoboothPage .btn.secondary { background: #eef4f0; color: #4f7a6b; }
+#photoboothPage .tab { background: #e3f4ff; color: #2d7fb0; font-weight: 700; }
+#photoboothPage .tab.active, #photoboothPage .btn.primary { color: white; background: linear-gradient(135deg, #8fd16f, #3fa34d); }
+#photoboothPage .btn.secondary { background: #fff1b8; color: #8a6200; font-weight: 700; }
+#photoboothPage #download { background: linear-gradient(135deg, #ffb347, #ff7a45); }
 #photoboothPage .btn:disabled { opacity: .45; cursor: not-allowed; }
 #photoboothPage .btn:not(:disabled):active, #photoboothPage .tab:active { transform: scale(.98); }
 #photoboothPage .camera-frame {
-      position: relative; overflow: hidden; border-radius: 18px; background: #dce8e1;
+      position: relative; overflow: hidden; border-radius: 18px; background: #e3f5d0;
       aspect-ratio: 4 / 3; display: grid; place-items: center;
     }
 #photoboothPage video { width: 100%; height: 100%; object-fit: cover; display: none; transform: scaleX(-1); }
-#photoboothPage .camera-placeholder { text-align: center; padding: 20px; color: #6c8a7d; line-height: 1.5; }
+#photoboothPage .camera-placeholder { text-align: center; padding: 20px; color: #4f7d58; line-height: 1.5; }
 #photoboothPage .countdown {
       position: absolute; inset: 0; display: none; place-items: center;
       color: white; font-size: clamp(4rem, 15vw, 7rem); font-weight: 900;
       text-shadow: 0 3px 20px rgba(30, 60, 50, .35); background: rgba(50, 80, 70, .14);
     }
 #photoboothPage .controls { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
-#photoboothPage .hint { font-size: .88rem; line-height: 1.5; color: #6c8a7d; margin: 12px 0 0; }
+#photoboothPage .hint { font-size: .88rem; line-height: 1.5; color: #5d7f63; margin: 12px 0 0; }
 #photoboothPage .upload-area { display: none; }
 #photoboothPage .upload-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
 #photoboothPage .upload-slot {
       display: grid; place-items: center; min-height: 112px; padding: 8px;
-      border: 1.5px dashed #a9c8b8; border-radius: 14px; background: #f4f8f5;
+      border: 1.5px dashed #ffb74d; border-radius: 14px; background: #fffaf0;
       text-align: center; font-size: .82rem; cursor: pointer; overflow: hidden;
     }
 #photoboothPage .upload-slot img { width: 100%; height: 100px; object-fit: cover; border-radius: 9px; }
@@ -656,31 +660,29 @@
 #photoboothPage .preview-wrap { display: flex; flex-direction: column; align-items: center; }
 #photoboothPage .strip {
       position:relative; width:min(100%,360px); aspect-ratio:720 / 1200;
-      background:#d6e4db; border-radius:6px; overflow:hidden;
-      box-shadow:0 14px 34px rgba(60,100,85,.28);
+      background:#cdeebc; border-radius:6px; overflow:hidden;
+      box-shadow:0 14px 34px rgba(50,120,70,.32);
     }
 #photoboothPage .strip canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
 #photoboothPage .strip-photos { position:absolute; inset:0; }
+#photoboothPage #stripTop { pointer-events:none; }
 #photoboothPage .strip-photos .photo-frame {
-      position:absolute; overflow:hidden; background:#e3ece7; touch-action:none; cursor:grab;
+      position:absolute; overflow:hidden; background:#e6f4d9; touch-action:none; cursor:grab;
     }
 #photoboothPage .strip-photos .photo-frame:active { cursor:grabbing; }
-#photoboothPage .strip-photos .photo-frame::after {
-      content:""; position:absolute; inset:0; border:2px solid #5f8a79; pointer-events:none;
-    }
 #photoboothPage .strip-photos .empty { width:100%; height:100%; display:grid;
-      place-items:center; color:#7a9a8c; font-size:.9rem; text-align:center; }
+      place-items:center; color:#5d9a62; font-size:.9rem; text-align:center; }
 #photoboothPage .strip-photos img { display:block; width:100%; height:100%; object-fit:cover;
       user-select:none; pointer-events:none; }
-#photoboothPage .adjust-box { margin-top:13px; padding:12px; background:#f4f8f5; border-radius:14px; }
+#photoboothPage .adjust-box { margin-top:13px; padding:12px; background:#f0fae8; border:1.5px dashed #bfe3a8; border-radius:14px; }
 #photoboothPage .adjust-box label { display:block; font-size:.85rem; margin-bottom:6px; font-weight:700; }
-#photoboothPage .adjust-box input[type=range] { width:100%; accent-color:#5f8a79; }
-#photoboothPage .selected-label { font-size:.85rem; color:#4f7a6b; margin:0 0 8px; }
-#photoboothPage .strip-footer { text-align: center; color: #5f8a79; font-size: .78rem; padding-top: 11px; letter-spacing: .5px; }
-#photoboothPage .preview-note { text-align: center; font-size: .86rem; line-height: 1.5; color: #6c8a7d; margin: 16px 0 0; }
-#photoboothPage .status { min-height: 1.4em; margin-top: 10px; color: #4f7a6b; font-size: .9rem; line-height: 1.4; }
+#photoboothPage .adjust-box input[type=range] { width:100%; accent-color:#3fa34d; }
+#photoboothPage .selected-label { font-size:.85rem; color:#2e8b57; margin:0 0 8px; }
+#photoboothPage .strip-footer { text-align: center; color: #2e8b57; font-size: .78rem; padding-top: 11px; letter-spacing: .5px; }
+#photoboothPage .preview-note { text-align: center; font-size: .86rem; line-height: 1.5; color: #5d7f63; margin: 16px 0 0; }
+#photoboothPage .status { min-height: 1.4em; margin-top: 10px; color: #2e8b57; font-size: .9rem; line-height: 1.4; }
 #photoboothPage .hidden { display: none !important; }
-#photoboothPage footer { text-align: center; font-size: .82rem; color: #7a9a8c; margin-top: 22px; }
+#photoboothPage footer { text-align: center; font-size: .82rem; color: #5d7f63; margin-top: 22px; }
 @media (max-width: 760px) {#photoboothPage .layout { grid-template-columns: 1fr; }
 #photoboothPage .panel { padding: 16px; }
 #photoboothPage .strip { width: min(100%, 300px); }}
@@ -689,14 +691,14 @@
 #photoboothPage button { margin: 7px 3px; }
 #photoboothPage .panel { margin-top: 20px; }
 #photoboothPage header p { font-size: 15px; line-height: 1.6; }
-#photoboothPage .btn:focus-visible, #photoboothPage .tab:focus-visible { outline: 3px solid #5f8a79; outline-offset: 2px; }
+#photoboothPage .btn:focus-visible, #photoboothPage .tab:focus-visible { outline: 3px solid #2e8b57; outline-offset: 2px; }
       </style>
 <div class="page">
     <a class="top-link" href="#" onclick="showBirthdayPage(); return false;">← Kembali ke kejutan ✦</a>
     <header>
-      <div class="eyebrow">a tiny memory to keep</div>
-      <h1>Photo Booth ✦</h1>
-      <p>Ambil tiga pose favoritmu, lalu simpan kenangan kecil ini dalam satu strip foto yang manis. 🎀</p>
+      <div class="eyebrow">a tiny memory from the garden</div>
+      <h1>Photo Booth 🌱</h1>
+      <p>Ambil tiga pose favoritmu, lalu simpan kenangan kecil ini dalam satu strip foto bertema kebun yang seru. 🌱🐱</p>
     </header>
 
     <div class="layout">
@@ -710,7 +712,7 @@
         <div id="cameraArea">
           <div class="camera-frame">
             <div class="camera-placeholder" id="cameraPlaceholder">
-              <div style="font-size:2.5rem">✦</div>
+              <div style="font-size:2.5rem">🌱</div>
               <strong>Kamera siap?</strong><br>
               Tekan “Nyalakan kamera”, lalu pencet tombol foto setiap kali siap berpose.
             </div>
@@ -740,11 +742,12 @@
       </section>
 
       <section class="panel">
-        <h2>🎀 Hasil photo strip</h2>
+        <h2>🌻 Hasil photo strip</h2>
         <div class="preview-wrap">
           <div class="strip" id="strip">
             <canvas id="stripBg" aria-hidden="true"></canvas>
             <div class="strip-photos" id="stripPhotos"></div>
+            <canvas id="stripTop" aria-hidden="true"></canvas>
           </div>
           <p class="preview-note">Pilih bingkai foto di strip, lalu geser fotonya untuk mengatur posisi. Gunakan slider untuk zoom.</p>
           <div class="adjust-box">
@@ -759,7 +762,7 @@
         </div>
       </section>
     </div>
-    <footer>made with ✦ just for a little happy memory</footer>
+    <footer>made with 🌱 just for a little happy memory</footer>
   </div>
   <canvas id="canvas" class="hidden"></canvas>
     </section>
@@ -773,7 +776,7 @@
        PENGATURAN MUSIK
        ========================================================= */
     const FADE_IN_MS = 7000;   // lama transisi suara dari pelan ke keras
-    const MAX_VOLUME = 0.77;   // 0 - 1  (sebelumnya 1, dikurangi 23%)
+    const MAX_VOLUME = 0.55;   // 0 - 1  (sebelumnya 0.77, diturunkan 28%)
 
     const music = $('bgMusic');
     const musicBtn = $('musicToggle');
@@ -862,7 +865,7 @@
         setVol(0);                       // mulai dari senyap
         await music.play();
         if (audioCtx && audioCtx.state === 'suspended') await audioCtx.resume();
-        fadeTo(MAX_VOLUME, fadeMs);      // naik pelan-pelan sampai penuh
+        fadeTo(MAX_VOLUME, fadeMs);      // naik pelan-pelan sampai volume maksimal
         return true;
       } catch (error) {
         console.error('Musik gagal diputar:', error);
@@ -1053,6 +1056,7 @@
     const uploadTab = document.getElementById('uploadTab');
     const stripPhotos = document.getElementById('stripPhotos');
     const stripBg = document.getElementById('stripBg');
+    const stripTop = document.getElementById('stripTop');
     const downloadBtn = document.getElementById('download');
     const statusEl = document.getElementById('status');
     const canvas = document.getElementById('canvas');
@@ -1063,7 +1067,6 @@
 
     /* ---------- Ukuran & tata letak strip (satuan desain 720 x 1200) ---------- */
     const STRIP = { W: 720, H: 1200, x: 160, w: 400, h: 290, ys: [215, 525, 835] };
-    const PINK = '#ee5b8b', PINK_DEEP = '#e0457b', OUTLINE = '#fff6f9';   // warna dasar; diubah jadi sage oleh soften()
     const FONT_STACK = 'Chewy, "Arial Rounded MT Bold", "Trebuchet MS", sans-serif';
     const blankCrop = () => ({ zoom: 1, x: 0, y: 0 });
 
@@ -1312,7 +1315,7 @@
         frame.style.width = (STRIP.w / STRIP.W * 100) + '%';
         frame.style.height = (STRIP.h / STRIP.H * 100) + '%';
         const isSel = selectedPhoto === i;
-        frame.style.boxShadow = isSel && photo ? '0 0 0 3px #fff, 0 0 0 5px #5f8a79' : 'none';
+        frame.style.boxShadow = isSel && photo ? '0 0 0 3px #fff, 0 0 0 5px #ff9f1c' : 'none';
         if (photo) {
           const img = document.createElement('img');
           img.alt = `Foto ${i + 1}`;
@@ -1322,7 +1325,7 @@
           frame.addEventListener('click', () => { if (selectedPhoto !== i) selectPhoto(i); });
           makeDraggable(frame, i);
         } else {
-          frame.innerHTML = `<div class="empty">Foto ${i + 1}<br>✦</div>`;
+          frame.innerHTML = `<div class="empty">Foto ${i + 1}<br>🌱</div>`;
           frame.addEventListener('click', () => selectPhoto(i));
         }
         stripPhotos.appendChild(frame);
@@ -1371,65 +1374,51 @@
     }
 
     /* =========================================================
-       LATAR ESTETIK PHOTO STRIP (dipakai pratinjau & file download)
+       PHOTO STRIP BERTEMA KEBUN / AGROTEKNOLOGI
+       Lapisan bawah (latar) + lapisan atas (stiker di atas foto)
        ========================================================= */
     function seeded(seed) { let s = seed; return () => (s = (s * 16807) % 2147483647) / 2147483647; }
 
-    // Mengubah semua warna pink/ungu hasil gambar menjadi sage green / dusty blue yang kalem
-    function soften(c) {
-      const w = c.canvas.width, h = c.canvas.height;
-      const img = c.getImageData(0, 0, w, h), d = img.data;
-      for (let i = 0; i < d.length; i += 4) {
-        const r = d[i] / 255, g = d[i + 1] / 255, b = d[i + 2] / 255;
-        const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
-        const l = (mx + mn) / 2, dl = mx - mn;
-        if (dl < 0.02) continue;                       // putih/abu dibiarkan
-        let s = dl / (1 - Math.abs(2 * l - 1)), hue;
-        if (mx === r) hue = ((g - b) / dl + 6) % 6;
-        else if (mx === g) hue = (b - r) / dl + 2;
-        else hue = (r - g) / dl + 4;
-        hue *= 60;
-        if (hue >= 285 || hue < 30) hue = 150;         // pink/merah -> sage green
-        else if (hue >= 235) hue = 210;                // ungu -> dusty blue
-        s *= 0.55;                                     // warna lebih kalem
-        const k = (n) => (n + hue / 30) % 12;
-        const a = s * Math.min(l, 1 - l);
-        const f = (n) => l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1));
-        d[i] = f(0) * 255; d[i + 1] = f(8) * 255; d[i + 2] = f(4) * 255;
-      }
-      c.putImageData(img, 0, 0);
-    }
-
-    function drawStripArt(c, S) {
-      drawStripArtRaw(c, S);
-      soften(c);
-    }
-
-    function drawStripArtRaw(c, S) {
+    function drawStripArt(c, S, layer = 'base') {
       const { W, H } = STRIP;
+      const INK = '#2f5d3a', OUT = '#ffffff';
       c.save();
       c.setTransform(S, 0, 0, S, 0, 0);
-
-      // kertas + bintik halus
-      const g = c.createLinearGradient(0, 0, 0, H);
-      g.addColorStop(0, '#fcdbe6'); g.addColorStop(1, '#fad0de');
-      c.fillStyle = g; c.fillRect(0, 0, W, H);
-      const rnd = seeded(7);
-      for (let i = 0; i < 700; i++) {
-        c.fillStyle = rnd() < .5 ? 'rgba(255,255,255,.22)' : 'rgba(224,110,150,.07)';
-        c.beginPath(); c.arc(rnd() * W, rnd() * H, rnd() * 1.6 + .3, 0, 6.283); c.fill();
-      }
       c.lineJoin = 'round'; c.lineCap = 'round';
 
-      const P = (d) => new Path2D(d);
-      const ell = (cx, cy, rx, ry, rot = 0) => { const p = new Path2D(); p.ellipse(cx, cy, rx, ry, rot, 0, Math.PI * 2); return p; };
+      if (layer === 'base') {
+      /* ---- latar: hijau segar + bintik warna-warni ---- */
+      const g = c.createLinearGradient(0, 0, 0, H);
+      g.addColorStop(0, '#c9edb9'); g.addColorStop(.5, '#e4f6c6'); g.addColorStop(1, '#b4e3c8');
+      c.fillStyle = g; c.fillRect(0, 0, W, H);
+      const rnd = seeded(11);
+      const dotColors = ['rgba(255,255,255,.55)', 'rgba(255,214,102,.45)', 'rgba(150,210,245,.40)', 'rgba(255,150,120,.30)', 'rgba(120,200,120,.30)'];
+      for (let i = 0; i < 110; i++) {
+        c.fillStyle = dotColors[i % dotColors.length];
+        c.beginPath(); c.arc(rnd() * W, rnd() * H, rnd() * 5 + 1.5, 0, 6.283); c.fill();
+      }
+      }
 
-      // "stiker": garis putih tebal di luar, lalu isi + garis berwarna
-      const group = (parts, s) => {
+      /* ---- alat bantu menggambar ---- */
+      const P = (d) => new Path2D(d);
+      const ell = (x, y, rx, ry, rot = 0) => { const p = new Path2D(); p.ellipse(x, y, rx, ry, rot, 0, Math.PI * 2); return p; };
+      const rr = (x, y, w, h, r) => P(`M${x + r} ${y} H${x + w - r} Q${x + w} ${y} ${x + w} ${y + r} V${y + h - r} Q${x + w} ${y + h} ${x + w - r} ${y + h} H${x + r} Q${x} ${y + h} ${x} ${y + h - r} V${y + r} Q${x} ${y} ${x + r} ${y} Z`);
+      const star = (n, ro, ri, x = 0, y = 0) => {
+        let d = '';
+        for (let i = 0; i < n * 2; i++) {
+          const r = i % 2 ? ri : ro, a = -Math.PI / 2 + i * Math.PI / n;
+          d += (i ? 'L' : 'M') + (x + Math.cos(a) * r).toFixed(1) + ' ' + (y + Math.sin(a) * r).toFixed(1) + ' ';
+        }
+        return P(d + 'Z');
+      };
+      const dot = (x, y, r, fill) => { c.fillStyle = fill; c.beginPath(); c.arc(x, y, r, 0, 6.283); c.fill(); };
+
+      // "stiker": garis putih tebal di luar, lalu isi + garis tepi
+      const sticker = (parts, s) => {
         c.save();
-        c.strokeStyle = OUTLINE;
-        parts.forEach(({ p, lw = 3.6 }) => { c.lineWidth = (lw + 9) / s; c.stroke(p); });
-        parts.forEach(({ p, fill, col = PINK, lw = 3.6 }) => {
+        c.strokeStyle = OUT;
+        parts.forEach(({ p, lw = 3 }) => { c.lineWidth = (lw + 9) / s; c.stroke(p); });
+        parts.forEach(({ p, fill, col = INK, lw = 3 }) => {
           if (fill) { c.fillStyle = fill; c.fill(p); }
           c.strokeStyle = col; c.lineWidth = lw / s; c.stroke(p);
         });
@@ -1439,143 +1428,310 @@
         const s = size / base;
         c.save(); c.translate(x, y); c.rotate(rot || 0); c.scale(s, s); draw(s); c.restore();
       };
-
-      const SOFT = 'rgba(255,238,244,.55)';
-      // bintang 5 sudut (pengganti hati)
-      const HEART = P('M0 -44 L13 -14 L45 -12 L20 8 L28 40 L0 22 L-28 40 L-20 8 L-45 -12 L-13 -14 Z');
-      const SPARK = P('M0 -50 Q4 -4 50 0 Q4 4 0 50 Q-4 4 -50 0 Q-4 -4 0 -50 Z');
-      const MINIHEART = P('M-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0 Z');
-
-      const heart = (x, y, size, rot) => put(x, y, size, 100, rot, s => group([{ p: HEART, fill: SOFT }], s));
-      const sparkle = (x, y, size) => put(x, y, size, 100, 0, s => group([{ p: SPARK, fill: SOFT }], s));
-      const burst = (x, y, a) => {
-        const parts = [-1, 0, 1].map(k => {
-          const t = a + k * .4, p = new Path2D();
-          p.moveTo(x + Math.cos(t) * 12, y + Math.sin(t) * 12);
-          p.lineTo(x + Math.cos(t) * 34, y + Math.sin(t) * 34);
-          return { p, lw: 4.5 };
-        });
-        group(parts, 1);
+      const face = (s, x, y, gap = 9, r = 2.6) => {
+        c.fillStyle = INK;
+        [-gap, gap].forEach(dx => { c.beginPath(); c.arc(x + dx, y, r, 0, 6.283); c.fill(); });
+        c.strokeStyle = INK; c.lineWidth = 2.2 / s;
+        c.stroke(P(`M${x - 6} ${y + 6} Q${x} ${y + 12} ${x + 6} ${y + 6}`));
       };
 
-      const crown = (x, y, size, rot) => put(x, y, size, 104, rot, s => group([
-        { p: P('M-46 26 L-52 -24 L-24 0 L0 -36 L24 0 L52 -24 L46 26 Z'), fill: SOFT },
-        { p: P('M-44 40 H44') }
+      /* ---- stiker: langit ---- */
+      const sun = (x, y, size) => put(x, y, size, 100, 0, s => {
+        let d = '';
+        for (let i = 0; i < 12; i++) {
+          const a = i * Math.PI / 6;
+          d += `M${Math.cos(a - .15) * 34} ${Math.sin(a - .15) * 34} L${Math.cos(a) * 52} ${Math.sin(a) * 52} L${Math.cos(a + .15) * 34} ${Math.sin(a + .15) * 34} Z `;
+        }
+        sticker([{ p: P(d), fill: '#ffb300', col: '#e08a00', lw: 2.5 }, { p: ell(0, 0, 32, 32), fill: '#ffd54f', col: '#e08a00' }], s);
+        face(s, 0, -2, 10, 2.8);
+        c.fillStyle = 'rgba(255,138,101,.55)';
+        [-19, 19].forEach(dx => { c.beginPath(); c.ellipse(dx, 9, 6, 4, 0, 0, 6.283); c.fill(); });
+      });
+
+      const cloud = (x, y, size) => put(x, y, size, 100, 0, s => sticker([
+        { p: ell(-24, 8, 22, 18), fill: '#fff', col: '#8ec9ee' },
+        { p: ell(22, 8, 24, 19), fill: '#fff', col: '#8ec9ee' },
+        { p: ell(-2, -6, 28, 26), fill: '#fff', col: '#8ec9ee' },
+        { p: ell(0, 14, 40, 14), fill: '#fff', col: '#8ec9ee' }
       ], s));
 
-      const bow = (x, y, size, rot) => put(x, y, size, 150, rot, s => {
-        group([
-          { p: P('M0 0 C-18 -42 -72 -46 -74 -8 C-72 28 -22 24 0 0 Z'), fill: '#fbc3d4' },
-          { p: P('M0 0 C18 -42 72 -46 74 -8 C72 28 22 24 0 0 Z'), fill: '#fbc3d4' },
-          { p: P('M-2 6 L-34 58 L-14 54 L-8 66 L6 12 Z'), fill: '#f9b0c6' },
-          { p: P('M2 6 L34 58 L14 54 L8 66 L-6 12 Z'), fill: '#f9b0c6' },
-          { p: ell(0, 2, 13, 12), fill: '#f59ab7' }
+      /* ---- stiker: pohon ---- */
+      const tree = (x, y, size, rot) => put(x, y, size, 100, rot, s => {
+        sticker([
+          { p: P('M-9 18 H9 L11 58 H-11 Z'), fill: '#a0693a', col: '#6d4421' },
+          { p: ell(-27, 4, 24, 22), fill: '#43a047' },
+          { p: ell(27, 4, 24, 22), fill: '#43a047' },
+          { p: ell(0, -14, 36, 32), fill: '#66bb6a' }
         ], s);
-        c.fillStyle = OUTLINE; c.fill(MINIHEART);
+        [[-14, -22], [12, -10], [-24, 8], [24, 10], [2, -34]].forEach(([a, b]) => { dot(a, b, 5.5, '#e53935'); dot(a - 1.6, b - 1.8, 1.6, '#fff'); });
       });
 
-      const bunny = (x, y, size) => put(x, y, size, 104, 0, s => {
-        group([
-          { p: ell(-24, -38, 12, 26, -.2), fill: '#fff8fa' },
-          { p: ell(24, -38, 12, 26, .2), fill: '#fff8fa' },
-          { p: ell(0, 8, 52, 40), fill: '#fff8fa' }
+      const pine = (x, y, size, rot) => put(x, y, size, 100, rot, s => {
+        sticker([
+          { p: P('M-7 38 H7 V58 H-7 Z'), fill: '#a0693a', col: '#6d4421' },
+          { p: P('M0 -12 L40 40 H-40 Z'), fill: '#2f9e5a' },
+          { p: P('M0 -34 L33 10 H-33 Z'), fill: '#3cb371' },
+          { p: P('M0 -56 L26 -18 H-26 Z'), fill: '#52c77f' }
         ], s);
-        c.fillStyle = '#ffc2d3';
-        c.beginPath(); c.ellipse(-24, -36, 5, 15, -.2, 0, 6.283); c.fill();
-        c.beginPath(); c.ellipse(24, -36, 5, 15, .2, 0, 6.283); c.fill();
-        c.fillStyle = '#ffb0c6';
-        c.beginPath(); c.ellipse(-32, 20, 10, 7, 0, 0, 6.283); c.fill();
-        c.beginPath(); c.ellipse(32, 20, 10, 7, 0, 0, 6.283); c.fill();
-        c.fillStyle = PINK_DEEP;
-        c.beginPath(); c.arc(-18, 8, 3.4, 0, 6.283); c.fill();
-        c.beginPath(); c.arc(18, 8, 3.4, 0, 6.283); c.fill();
-        c.strokeStyle = PINK; c.lineWidth = 2.6 / s;
-        c.stroke(P('M-7 20 Q-3.5 26 0 20 Q3.5 26 7 20'));
-        // pita kecil di telinga
-        const mini = [P('M32 -30 L18 -40 L18 -22 Z'), P('M32 -30 L46 -40 L46 -22 Z')];
-        c.fillStyle = '#ffa9c2'; c.lineWidth = 2.6 / s;
-        mini.forEach(p => { c.fill(p); c.stroke(p); });
-        c.beginPath(); c.arc(32, -30, 4.2, 0, 6.283); c.fill(); c.stroke();
+        sticker([{ p: star(5, 9, 4, 0, -60), fill: '#ffd54f', col: '#e08a00', lw: 2 }], s);
       });
 
-      const cake = (x, y, size) => put(x, y, size, 110, 0, s => {
-        const parts = [
-          { p: P('M-55 8 H55 V48 Q55 58 45 58 H-45 Q-55 58 -55 48 Z'), fill: '#fff3f7' },
-          { p: P('M-38 -20 Q-38 -28 -30 -28 H30 Q38 -28 38 -20 V8 H-38 Z'), fill: '#fff3f7' },
-          { p: P('M-55 8 Q-46 24 -37 8 Q-28 24 -18 8 Q-9 24 0 8 Q9 24 18 8 Q28 24 37 8 Q46 24 55 8') }
-        ];
-        [-20, 0, 20].forEach(cx => {
-          parts.push({ p: P(`M${cx - 5} -28 V-54 H${cx + 5} V-28`), fill: '#ffe9f0' });
-          parts.push({ p: P(`M${cx} -82 C${cx - 9} -72 ${cx - 8} -62 ${cx} -60 C${cx + 8} -62 ${cx + 9} -72 ${cx} -82 Z`), fill: '#ffc15a', col: '#f58a4a', lw: 2.8 });
-        });
-        group(parts, s);
-        c.fillStyle = PINK;
-        c.fill(P('M-7 38 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0 Z'));
+      /* ---- stiker: kucing ---- */
+      const hat = (s) => sticker([
+        { p: P('M-22 -36 Q-22 -66 0 -66 Q22 -66 22 -36 Z'), fill: '#f6d365', col: '#c79a2a' },
+        { p: ell(0, -36, 44, 9), fill: '#f6d365', col: '#c79a2a' },
+        { p: P('M-22 -45 H22 V-38 H-22 Z'), fill: '#e5533d', col: '#b23a28', lw: 2 }
+      ], s);
+
+      const cat = (x, y, size, rot, fur, belly, dark, extra) => put(x, y, size, 100, rot, s => {
+        sticker([{ p: P('M24 44 C62 50 68 8 46 -4'), col: fur, lw: 11 }], s);
+        sticker([
+          { p: ell(0, 30, 30, 27), fill: fur },
+          { p: ell(-14, 54, 11, 7), fill: fur },
+          { p: ell(14, 54, 11, 7), fill: fur },
+          { p: P('M-31 -20 L-29 -58 L-6 -38 Z'), fill: fur },
+          { p: P('M31 -20 L29 -58 L6 -38 Z'), fill: fur },
+          { p: ell(0, -12, 34, 29), fill: fur }
+        ], s);
+        c.fillStyle = belly; c.beginPath(); c.ellipse(0, 36, 16, 16, 0, 0, 6.283); c.fill();
+        c.fillStyle = '#ffb3c1';
+        c.fill(P('M-25 -30 L-24 -48 L-11 -37 Z')); c.fill(P('M25 -30 L24 -48 L11 -37 Z'));
+        c.strokeStyle = dark; c.lineWidth = 3 / s; c.stroke(P('M-6 -38 V-30 M0 -40 V-31 M6 -38 V-30'));
+        dot(-12, -14, 4.2, INK); dot(12, -14, 4.2, INK); dot(-10.8, -15.4, 1.4, '#fff'); dot(13.2, -15.4, 1.4, '#fff');
+        c.fillStyle = 'rgba(255,130,150,.45)';
+        [-22, 22].forEach(dx => { c.beginPath(); c.ellipse(dx, -3, 6, 4, 0, 0, 6.283); c.fill(); });
+        c.fillStyle = '#ff8fa3'; c.fill(P('M-3.5 -7 H3.5 L0 -2.5 Z'));
+        c.strokeStyle = INK; c.lineWidth = 2 / s; c.stroke(P('M0 -2.5 Q-4 3 -8 1 M0 -2.5 Q4 3 8 1'));
+        c.strokeStyle = 'rgba(60,50,45,.75)'; c.lineWidth = 1.6 / s;
+        c.stroke(P('M-20 -5 L-38 -9 M-20 0 L-38 3 M20 -5 L38 -9 M20 0 L38 3'));
+        if (extra) extra(s);
       });
 
-      const ribbon = (x, y) => {
-        put(x, y, 1, 1, 0, s => {
-          const wave = P('M-130 3 q21 -17 42 0 t42 0');
-          group([{ p: wave }], s);
-          c.save(); c.scale(-1, 1); group([{ p: wave }], s); c.restore();
+      /* ---- stiker: tanaman & hasil kebun ---- */
+      const sprout = (x, y, size, rot) => put(x, y, size, 100, rot, s => {
+        sticker([
+          { p: P('M0 4 V-30'), col: '#2e7d32', lw: 5 },
+          { p: P('M0 -28 C-22 -46 -42 -34 -38 -22 C-22 -18 -6 -22 0 -28 Z'), fill: '#7bc96f' },
+          { p: P('M0 -34 C22 -56 44 -44 40 -28 C22 -24 6 -28 0 -34 Z'), fill: '#9ccc65' },
+          { p: P('M-26 6 H26 L20 54 H-20 Z'), fill: '#e07b39', col: '#a24f17' },
+          { p: P('M-31 -4 H31 V8 H-31 Z'), fill: '#ef9a55', col: '#a24f17' }
+        ], s);
+        face(s, 0, 30, 8, 2.6);
+      });
+
+      const sunflower = (x, y, size, rot) => put(x, y, size, 100, rot, s => {
+        sticker([
+          { p: P('M0 34 C6 48 -4 58 0 66'), col: '#43a047', lw: 6 },
+          { p: P('M0 54 C-22 44 -34 50 -34 60 C-18 66 -4 62 0 54 Z'), fill: '#66bb6a' },
+          { p: P('M0 48 C22 38 34 44 34 54 C18 60 4 56 0 48 Z'), fill: '#7bc96f' }
+        ], s);
+        const parts = [];
+        for (let i = 0; i < 14; i++) {
+          const a = i * Math.PI / 7, p = new Path2D();
+          p.ellipse(Math.cos(a) * 30, Math.sin(a) * 30 - 6, 15, 7.5, a, 0, 6.283);
+          parts.push({ p, fill: i % 2 ? '#ffca28' : '#ffd740', col: '#e08a00', lw: 2 });
+        }
+        parts.push({ p: ell(0, -6, 23, 23), fill: '#8d5524', col: '#5d3a1a' });
+        sticker(parts, s);
+        for (let i = 0; i < 18; i++) { const a = i * 2.4, r = Math.sqrt(i) * 4.6; dot(Math.cos(a) * r, Math.sin(a) * r - 6, 1.6, '#5d3a1a'); }
+      });
+
+      const corn = (x, y, size, rot) => put(x, y, size, 100, rot, s => {
+        sticker([{ p: ell(0, -8, 19, 44), fill: '#ffd740', col: '#d99a00' }], s);
+        c.strokeStyle = '#d99a00'; c.lineWidth = 1.8 / s;
+        c.stroke(P('M-7 -40 V24 M0 -50 V30 M7 -40 V24 M-14 -26 H14 M-17 -12 H17 M-17 2 H17 M-14 16 H14'));
+        sticker([
+          { p: P('M0 58 C-36 44 -38 8 -22 -12 C-16 14 -6 38 0 58 Z'), fill: '#7bc96f' },
+          { p: P('M0 58 C36 44 38 8 22 -12 C16 14 6 38 0 58 Z'), fill: '#5cb85c' }
+        ], s);
+        c.strokeStyle = '#c49a6c'; c.lineWidth = 2.4 / s; c.stroke(P('M0 -50 L-7 -60 M0 -50 V-62 M0 -50 L7 -60'));
+      });
+
+      const carrot = (x, y, size, rot) => put(x, y, size, 100, rot, s => {
+        sticker([
+          { p: P('M0 -26 C-18 -44 -24 -56 -14 -64 C-6 -54 -2 -42 0 -26 Z'), fill: '#4caf50' },
+          { p: P('M0 -26 C6 -46 4 -62 0 -70 C-4 -62 -6 -46 0 -26 Z'), fill: '#66bb6a' },
+          { p: P('M0 -26 C18 -44 24 -56 14 -64 C6 -54 2 -42 0 -26 Z'), fill: '#4caf50' },
+          { p: P('M-17 -22 C-17 -32 17 -32 17 -22 C15 10 5 40 0 58 C-5 40 -15 10 -17 -22 Z'), fill: '#ff8a3d', col: '#c2570f' }
+        ], s);
+        c.strokeStyle = '#d9631a'; c.lineWidth = 2.2 / s; c.stroke(P('M-9 -8 H-2 M3 8 H10 M-5 24 H1'));
+      });
+
+      const tomato = (x, y, size, rot) => put(x, y, size, 100, rot, s => {
+        sticker([{ p: ell(0, 8, 40, 34), fill: '#ef5350', col: '#b71c1c' }], s);
+        c.fillStyle = 'rgba(255,255,255,.55)'; c.beginPath(); c.ellipse(-20, -2, 8, 5, -.6, 0, 6.283); c.fill();
+        sticker([
+          { p: star(5, 22, 8, 0, -22), fill: '#43a047', col: '#2e7d32', lw: 2.5 },
+          { p: P('M0 -24 Q2 -38 8 -44'), col: '#2e7d32', lw: 4 }
+        ], s);
+        face(s, 0, 12, 12, 3);
+      });
+
+      const wheat = (x, y, size, rot) => put(x, y, size, 100, rot, s => {
+        [-.3, 0, .3].forEach(a => {
+          c.save(); c.translate(0, 52); c.rotate(a);
+          const parts = [{ p: P('M0 0 V-86'), col: '#c9a227', lw: 4 }];
+          for (let i = 0; i < 6; i++) {
+            const yy = -44 - i * 8;
+            parts.push({ p: ell(-6, yy, 4, 8, -.5), fill: '#f4c542', col: '#c9a227', lw: 1.6 });
+            parts.push({ p: ell(6, yy, 4, 8, .5), fill: '#f4c542', col: '#c9a227', lw: 1.6 });
+          }
+          parts.push({ p: ell(0, -94, 4, 9), fill: '#f4c542', col: '#c9a227', lw: 1.6 });
+          sticker(parts, s);
+          c.restore();
         });
-        bow(x, y - 4, 76, 0);
-      };
+        sticker([{ p: ell(0, 40, 14, 6), fill: '#e5533d', col: '#b23a28', lw: 2 }], s);
+      });
 
-      const swirl = (x, y, size) => put(x, y, size, 48, 0, s => group([{ p: P('M-24 6 C-10 -18 18 -10 12 4 C8 14 -4 10 0 2') }], s));
+      const can = (x, y, size, rot) => put(x, y, size, 100, rot, s => {
+        sticker([
+          { p: P('M-30 0 C-54 0 -54 36 -30 36'), col: '#0288d1', lw: 6 },
+          { p: P('M22 14 L52 -14 L58 -8 L30 30 Z'), fill: '#29b6f6', col: '#0277bd' },
+          { p: P('M44 -14 L64 -6 L56 -22 Z'), fill: '#0288d1', col: '#01579b', lw: 2.5 },
+          { p: P('M-30 -10 H22 V38 Q22 46 14 46 H-22 Q-30 46 -30 38 Z'), fill: '#4fc3f7', col: '#0277bd' },
+          { p: ell(-4, -10, 26, 5), fill: '#81d4fa', col: '#0277bd', lw: 2.5 }
+        ], s);
+        [[68, 6], [74, 20], [62, 24]].forEach(([a, b]) => { dot(a, b, 3.2, '#4fc3f7'); });
+        face(s, -4, 18, 9, 2.6);
+      });
 
-      /* ---- penempatan stiker ---- */
-      crown(140, 62, 80, -.25);
-      heart(590, 60, 66, .2);
-      burst(64, 150, -.5); burst(662, 120, -.9); burst(86, 30, .6);
-      bow(645, 262, 105, .2);
+      const tractor = (x, y, size, rot) => put(x, y, size, 110, rot, s => {
+        sticker([
+          { p: P('M30 -24 V-6'), col: '#546e7a', lw: 6 },
+          { p: P('M0 -6 H44 Q50 -6 50 0 V28 H0 Z'), fill: '#43a047' },
+          { p: P('M-40 -36 H-2 V26 H-40 Z'), fill: '#66bb6a' },
+          { p: P('M-35 -30 H-7 V-8 H-35 Z'), fill: '#b3e5fc', lw: 2.5 },
+          { p: P('M-44 -42 H2 V-34 H-44 Z'), fill: '#2e7d32' },
+          { p: ell(-22, 24, 26, 26), fill: '#37474f', col: '#263238' },
+          { p: ell(-22, 24, 11, 11), fill: '#ffd54f', col: '#c79a2a', lw: 2.5 },
+          { p: ell(36, 34, 15, 15), fill: '#37474f', col: '#263238' },
+          { p: ell(36, 34, 6, 6), fill: '#ffd54f', col: '#c79a2a', lw: 2 }
+        ], s);
+        sticker([
+          { p: ell(32, -32, 6, 5), fill: '#fff', col: '#90a4ae', lw: 2 },
+          { p: ell(40, -42, 8, 6), fill: '#fff', col: '#90a4ae', lw: 2 }
+        ], s);
+      });
 
-      heart(92, 300, 64, -.2);
-      sparkle(108, 402, 34); sparkle(70, 462, 20);
-      burst(120, 520, 2.1);
+      const mushroom = (x, y, size, rot) => put(x, y, size, 80, rot, s => {
+        sticker([
+          { p: P('M-12 2 H12 V32 Q12 40 5 40 H-5 Q-12 40 -12 32 Z'), fill: '#fff3e0' },
+          { p: P('M-38 6 C-38 -40 38 -40 38 6 Z'), fill: '#ef5350', col: '#b71c1c' }
+        ], s);
+        [[-16, -12, 6], [8, -22, 5], [20, -6, 4.5]].forEach(([a, b, r]) => dot(a, b, r, '#fff'));
+        face(s, 0, 20, 5, 2);
+      });
 
-      burst(655, 405, .4); heart(655, 468, 32, .2); sparkle(655, 590, 34);
+      /* ---- stiker: serangga & hiasan kecil ---- */
+      const butterfly = (x, y, size, rot, c1, c2) => put(x, y, size, 60, rot, s => {
+        sticker([
+          { p: ell(-16, -10, 15, 22, .5), fill: c1, lw: 2.5 },
+          { p: ell(16, -10, 15, 22, -.5), fill: c1, lw: 2.5 },
+          { p: ell(-11, 14, 10, 14, -.4), fill: c2, lw: 2.5 },
+          { p: ell(11, 14, 10, 14, .4), fill: c2, lw: 2.5 },
+          { p: ell(0, 2, 3.5, 20), fill: INK, lw: 1 }
+        ], s);
+        c.strokeStyle = INK; c.lineWidth = 2 / s; c.stroke(P('M0 -16 Q-6 -30 -12 -32 M0 -16 Q6 -30 12 -32'));
+      });
 
-      heart(92, 640, 62, -.15); heart(140, 678, 28, .2);
-      burst(80, 735, 2.4);
-      bunny(645, 722, 110);
-      sparkle(648, 822, 36);
+      const bee = (x, y, size, rot) => put(x, y, size, 60, rot, s => {
+        sticker([
+          { p: ell(-6, -16, 11, 7, -.6), fill: '#e1f5fe', col: '#7fb8d8', lw: 2 },
+          { p: ell(8, -16, 11, 7, .6), fill: '#e1f5fe', col: '#7fb8d8', lw: 2 }
+        ], s);
+        sticker([{ p: ell(0, 2, 24, 16), fill: '#ffd54f', col: '#c79a2a' }], s);
+        c.strokeStyle = '#4e342e'; c.lineWidth = 5 / s; c.stroke(P('M-6 -11 Q-9 2 -6 15 M7 -12 Q10 2 7 14'));
+        dot(15, 0, 2.6, INK);
+      });
 
-      burst(112, 905, -.6); burst(640, 910, -2.5);
-      cake(95, 1012, 100);
-      heart(645, 985, 60, .15);
-      swirl(650, 1085, 40);
+      const ladybug = (x, y, size, rot) => put(x, y, size, 60, rot, s => {
+        sticker([{ p: ell(0, -22, 12, 10), fill: '#263238' }, { p: ell(0, 2, 24, 22), fill: '#e53935', col: '#b71c1c' }], s);
+        c.strokeStyle = '#263238'; c.lineWidth = 2.4 / s; c.stroke(P('M0 -20 V24'));
+        [[-11, -6, 4.5], [11, -6, 4.5], [-12, 10, 4], [12, 10, 4]].forEach(([a, b, r]) => dot(a, b, r, '#263238'));
+      });
 
-      ribbon(360, 1164);
-      heart(195, 1166, 26, -.1); heart(525, 1166, 26, .1);
+      const leaf = (x, y, size, rot, fill) => put(x, y, size, 60, rot, s => sticker([
+        { p: P('M0 -26 C24 -12 24 18 0 30 C-24 18 -24 -12 0 -26 Z'), fill },
+        { p: P('M0 -20 V26'), col: '#2e7d32', lw: 2 }
+      ], s));
 
-      /* ---- judul ---- */
-      const line = (text, cx, base, size, maxW) => {
-        c.font = `${size}px ${FONT_STACK}`;
-        const w = c.measureText(text).width;
-        if (w > maxW) c.font = `${size * maxW / w}px ${FONT_STACK}`;
-        c.textAlign = 'center'; c.textBaseline = 'alphabetic';
+      const flower = (x, y, size, col) => put(x, y, size, 60, 0, s => {
+        const parts = [{ p: P('M0 8 V40'), col: '#43a047', lw: 4 }];
+        for (let i = 0; i < 5; i++) {
+          const a = i * 1.2566, p = new Path2D();
+          p.ellipse(Math.cos(a) * 12, Math.sin(a) * 12 - 6, 9, 7, a, 0, 6.283);
+          parts.push({ p, fill: col, lw: 2 });
+        }
+        parts.push({ p: ell(0, -6, 7, 7), fill: '#ffd54f', lw: 2 });
+        sticker(parts, s);
+      });
+
+      if (layer === 'base') {
+        /* ---- LAPISAN BAWAH (di bawah foto): bingkai, langit, judul, rumput ---- */
+        const frameColors = ['#66bb6a', '#ffca28', '#ff8a65'];
+        STRIP.ys.forEach((fy, i) => {
+          c.save();
+          c.shadowColor = 'rgba(40,90,50,.28)'; c.shadowBlur = 14 * S; c.shadowOffsetY = 4 * S;
+          c.fillStyle = frameColors[i];
+          c.fill(rr(STRIP.x - 8, fy - 8, STRIP.w + 16, STRIP.h + 16, 12));
+          c.restore();
+          c.fillStyle = '#ffffff';
+          c.fill(rr(STRIP.x - 4, fy - 4, STRIP.w + 8, STRIP.h + 8, 9));
+        });
+
+        sun(76, 62, 104);
+        cloud(642, 54, 112);
+
+        const word = (text, x, base, size, maxW, pal) => {
+          c.font = `${size}px ${FONT_STACK}`;
+          const chars = [...text], ws = chars.map(ch => c.measureText(ch).width);
+          const tot = ws.reduce((a, b) => a + b, 0), k = tot > maxW ? maxW / tot : 1;
+          c.font = `${size * k}px ${FONT_STACK}`;
+          c.textAlign = 'center'; c.textBaseline = 'alphabetic';
+          let px = x - tot * k / 2;
+          chars.forEach((ch, i) => {
+            const w = ws[i] * k;
+            c.save();
+            c.translate(px + w / 2, base + Math.sin(i * 1.3) * 5);
+            c.rotate(Math.sin(i * 1.7) * .06);
+            c.lineWidth = size * k * .17; c.strokeStyle = OUT; c.strokeText(ch, 0, 0);
+            c.lineWidth = Math.max(2, size * k * .05); c.strokeStyle = INK; c.strokeText(ch, 0, 0);
+            c.fillStyle = pal[i % pal.length]; c.fillText(ch, 0, 0);
+            c.restore();
+            px += w;
+          });
+        };
         c.save();
-        c.shadowColor = 'rgba(210,80,125,.28)'; c.shadowBlur = 10 * S; c.shadowOffsetY = 3 * S;
-        c.lineWidth = 20; c.strokeStyle = OUTLINE; c.strokeText(text, cx, base);
+        c.translate(360, 110); c.rotate(-0.04);
+        word('ITS MY', 18, -12, 76, 330, ['#43a047', '#29b6f6', '#ffb300', '#ef5350', '#7e57c2', '#43a047']);
+        word('BIRTHDAY!', 0, 80, 110, 560, ['#ef5350', '#ff9800', '#fbc02d', '#43a047', '#29b6f6', '#7e57c2', '#ec407a', '#ff7043', '#66bb6a']);
         c.restore();
-        c.lineWidth = 2.5; c.strokeStyle = PINK_DEEP; c.strokeText(text, cx, base);
-        c.fillStyle = PINK; c.fillText(text, cx, base);
-      };
-      c.save();
-      c.translate(360, 110); c.rotate(-0.04);
-      line('ITS MY', 18, -12, 76, 330);
-      line('BIRTHDAY!', 0, 80, 110, 560);
-      c.restore();
+
+        c.fillStyle = '#a5dc86'; c.fill(P('M0 1150 Q120 1112 250 1142 T500 1138 T720 1128 V1200 H0 Z'));
+        c.fillStyle = '#6cc16a'; c.fill(P('M0 1172 Q150 1140 300 1166 T620 1160 T720 1156 V1200 H0 Z'));
+        flower(262, 1166, 36, '#ffca28'); flower(360, 1174, 34, '#ff8a65'); flower(458, 1166, 36, '#64b5f6');
+      } else {
+        /* ---- LAPISAN ATAS (di atas foto): stiker yang sedikit menutupi tepi foto ---- */
+        tree(130, 296, 135, -.04);                                                   // pojok kiri atas foto 1
+        sunflower(574, 250, 120, .05);                                               // pojok kanan atas foto 1
+        cat(562, 496, 122, .04, '#f6a04d', '#fff1dc', '#d9752b', hat);              // antara foto 1 dan 2 (kanan)
+        sprout(128, 590, 100, .05);                                                  // tepi kiri foto 2
+        pine(572, 738, 125, .03);                                                    // tepi kanan foto 2
+        cat(138, 800, 120, -.05, '#9aa5b1', '#eef2f5', '#6b7683', hat);      // antara foto 2 dan 3 (kiri)
+        wheat(564, 960, 122, .05);                                                   // tepi kanan foto 3
+        tractor(138, 1004, 120, -.03);                                               // tepi kiri foto 3
+        can(566, 1100, 100, -.05);                                                   // pojok kanan bawah foto 3
+        cat(156, 1138, 72, -.05, '#455a64', '#cfd8dc', '#263238');                  // pojok kiri bawah foto 3
+      }
 
       c.restore();
     }
 
     function paintStripBg() {
       const S = 1.5;
-      stripBg.width = Math.round(STRIP.W * S);
-      stripBg.height = Math.round(STRIP.H * S);
-      drawStripArt(stripBg.getContext('2d'), S);
+      [stripBg, stripTop].forEach(el => { el.width = Math.round(STRIP.W * S); el.height = Math.round(STRIP.H * S); });
+      drawStripArt(stripBg.getContext('2d'), S, 'base');
+      drawStripArt(stripTop.getContext('2d'), S, 'top');
     }
 
     /* =========================================================
@@ -1597,7 +1753,7 @@
       const S = 2;
       canvas.width = STRIP.W * S;
       canvas.height = STRIP.H * S;
-      drawStripArt(ctx, S);
+      drawStripArt(ctx, S, 'base');
 
       ctx.setTransform(S, 0, 0, S, 0, 0);
       photos.forEach((photo, i) => {
@@ -1606,10 +1762,9 @@
         ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip();
         drawCover(photo, x, y, w, h, crops[i] || blankCrop());
         ctx.restore();
-        ctx.strokeStyle = '#6f9a8a'; ctx.lineWidth = 4;
-        ctx.strokeRect(x + 2, y + 2, w - 4, h - 4);
       });
       ctx.setTransform(1, 0, 0, 1, 0, 0);
+      drawStripArt(ctx, S, 'top');   // stiker di atas foto
 
       canvas.toBlob(blob => {
         if (!blob) { setStatus('Gagal membuat file. Coba lagi.'); return; }
@@ -1621,7 +1776,7 @@
         link.click();
         link.remove();
         URL.revokeObjectURL(url);
-        setStatus('Photo strip berhasil di-download! Cek folder Downloads kamu. 🎀');
+        setStatus('Photo strip berhasil di-download! Cek folder Downloads kamu. 🌻');
       }, 'image/png');
     }
     downloadBtn.addEventListener('click', downloadStrip);
